@@ -1,2 +1,2 @@
 # portfolio
-Project my work and my skills
+Project about my work and my skills
