@@ -1,0 +1,26 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Sergey Frolenko portfolio - project speaking about works and skills",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergeyfrolenko/portfolio.git"
+  },
+  "author": "sergeyfrolenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergeyfrolenko/portfolio/issues"
+  },
+  "homepage": "https://github.com/sergeyfrolenko/portfolio#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "mongoose": "^5.9.19",
+    "pug": "^3.0.0"
+  }
+}
