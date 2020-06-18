@@ -1,10 +1,12 @@
-const app = require('express')();
+const express = require('express');
+const app = express();
 
 const things = require('./things');
 app.use('/things', things);
 
 app.set('view engine', 'pug');
 app.set('views', './views');
+app.use(express.static('public'))
 
 app.get('/', (req, res)=>{
    res.render('dynamic',{
