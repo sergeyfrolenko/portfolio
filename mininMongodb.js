@@ -51,18 +51,26 @@ const Person = mongoose.model('persons')
 // })
 
 // delete duplicates
-Person.find()
-    .then(data=>{
-        data.forEach(el=>{
-            Person.find({name: 'el.name'})
-                .then(data2=>{
-                    
-                })
-                .catch(e=>{
-                    console.log(e)
-                })
-        })
-    })
-    .catch(e=>{
-        console.log(e)
-    })
+// Person.find()
+//     .then(data=>{
+//         data.forEach(el=>{
+//             Person.find({name: 'el.name'})
+//                 .then(data2=>{
+//                     
+//                 })
+//                 .catch(e=>{
+//                     console.log(e)
+//                 })
+//         })
+//     })
+//     .catch(e=>{
+//         console.log(e)
+//     })
+// Person.find()
+//   .sort('-age')
+//   .limit(1)
+//   .deleteOne()
+// //   .remove()
+//   .then((arr)=>{
+//     console.log(arr)
+//   })

@@ -3,6 +3,17 @@ const app = express();
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const upload = multer();
+const mongoose = require('mongoose')
+
+// SET section
+app.set('view engine', 'pug');
+app.set('views', './views');
+
+// connect to db
+require('./connectMydb')
+// model return User
+require('./user.model')
+const User = mongoose.model('User')
 
 // USE section
 const things = require('./things');
@@ -13,10 +24,6 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(upload.array());
-
-// SET section
-app.set('view engine', 'pug');
-app.set('views', './views');
 
 // Routing
 app.get('/', (req, res)=>{
@@ -40,6 +47,38 @@ app.get('/form', (req, res)=>{
 app.post('/form', (req, res)=>{
   console.log(req.body);
   res.send('recieved your request!');
+});
+app.get('/user', (req,res)=>{
+  res.render('user');
+})
+app.post('/user', function(req, res){
+   const userInfo = req.body;
+   if(!userInfo.name || !userInfo.age) {
+      res.render('show_message', {
+         message: "Sorry, you provided worng info",
+         type: "error"
+      });
+   } else {
+      const newUser = new User({
+         name: userInfo.name,
+         age: userInfo.age
+      });
+      newUser.save((err, User)=>{
+         if(err) {
+            res.render('show_message', {
+              message: "Database error", 
+              type: "error"
+            });
+         } else {
+           console.log(userInfo)
+            res.render('show_message', {
+              message: "New person added",
+              type: "success", 
+              user: userInfo
+            });
+         }
+      });
+   }
 });
 
 // Listening

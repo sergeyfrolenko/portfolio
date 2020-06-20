@@ -1,0 +1,14 @@
+html
+  include ./head.pug
+  body
+    h1 Add user
+    form(method = 'POST', action = '/user')
+      label(for = 'name') Name:
+      input(name = 'name')
+      br
+      br
+      label(for = 'age') Age:
+      input(name = 'age')
+      br
+      br
+      button(type = submit) add user to db
