@@ -26,31 +26,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(upload.array());
 
 // Routing
-app.get('/', (req, res)=>{
-   res.render('dynamic',{
-     name: 'Olya',
-     url: 'webref'
-   });
-});
-app.get('/first', (req, res)=>{
-   res.render('first');
-});
-app.get('/skills', (req, res)=>{
-   res.render('skills', {
-     title: 'My Skills',
-     logo: 'Knowledge light your future'
-   });
-});
-app.get('/form', (req, res)=>{
-  res.render('form');
-});
-app.post('/form', (req, res)=>{
-  console.log(req.body);
-  res.send('recieved your request!');
-});
-app.get('/user', (req,res)=>{
-  res.render('user');
-})
+const routing = require('./routing');
+app.use('/', routing);
 app.post('/user', function(req, res){
    const userInfo = req.body;
    if(!userInfo.name || !userInfo.age) {
@@ -70,7 +47,6 @@ app.post('/user', function(req, res){
               type: "error"
             });
          } else {
-           console.log(userInfo)
             res.render('show_message', {
               message: "New person added",
               type: "success", 
@@ -80,6 +56,7 @@ app.post('/user', function(req, res){
       });
    }
 });
+
 
 // Listening
 app.listen(3000, function () {
