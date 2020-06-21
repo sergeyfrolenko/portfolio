@@ -13,7 +13,7 @@ app.set('views', './views');
 require('./connectMydb')
 // model return User
 require('./user.model')
-const User = mongoose.model('User')
+const Users = mongoose.model('Users')
 
 // USE section
 const things = require('./things');
@@ -36,7 +36,7 @@ app.post('/user', function(req, res){
          type: "error"
       });
    } else {
-      const newUser = new User({
+      const newUser = new Users({
          name: userInfo.name,
          age: userInfo.age
       });
@@ -47,16 +47,24 @@ app.post('/user', function(req, res){
               type: "error"
             });
          } else {
+            Users.find()
+              .then(arr=>{
+                console.log(arr)
+              })
+              .catch(e=>{
+                console.log(e)
+              })
             res.render('show_message', {
               message: "New person added",
               type: "success", 
-              user: userInfo
+              user: userInfo,
             });
          }
       });
    }
 });
 
+// read mongodb mydb
 
 // Listening
 app.listen(3000, function () {

@@ -6,4 +6,4 @@ const userSchema = new Schema({
   name: String,
   age: Number
 })
-mongoose.model('User', userSchema)
+mongoose.model('Users', userSchema)
