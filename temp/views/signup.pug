@@ -1,0 +1,10 @@
+html
+    include ./head
+    body
+        if(message)
+            h4 #{message}
+        form(action = '/signup' method = 'POST')
+            input(name = 'id' type = 'text' placeholder = 'User ID' required)
+            input(name = 'password' type = 'text' placeholder = 'Password' required)
+            button(type = 'submit') Sign Up
+        include ./footer

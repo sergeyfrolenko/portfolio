@@ -1,0 +1,10 @@
+html
+    include ./head
+    body
+        h1 Login page
+        if(message)
+            h4 #{message}
+            form(action = '/login' method = 'POST')
+                input(name = 'id' type = 'text' placeholder = 'User ID' required)
+                input(name = 'password' type = 'text' placeholder = 'User Password' required)
+                button(type = 'submit') Log in

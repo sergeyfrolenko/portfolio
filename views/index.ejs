@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main page</title>
+</head>
+<body>
+    <h1> <%- text %></h1>
+    <nav>
+        <ul>
+            <li><a href="/create">add</a></li>
+        </ul>
+    </nav>
+    <ul>
+        <% arr.forEach(function(el){ %>
+            <li> <%= el %> </li>
+        <% }); %>
+      </ul>
+</body>
+</html>
