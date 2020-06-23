@@ -1,17 +1,16 @@
 <%- include('layouts/head.ejs') %>
-    <h1> <%- text %></h1>
-    <nav>
-        <ul>
-            <li><a href="/create">add</a></li>
-        </ul>
-    </nav>
-    <ul>
-      <% posts.forEach(function(post) { %>
-            <li>
-              <h3> <%= post.title %> </h3>
-              <p> <%= post.body %> </p>
-            </li>
-        <% }); %>
-      </ul>
-</body>
-</html>
+<h1><%- text %></h1>
+<nav>
+  <ul>
+    <li><a href="/create">add</a></li>
+  </ul>
+</nav>
+<ul>
+  <% posts.forEach(function(post) { %>
+  <li>
+    <h3><%= post.title %></h3>
+    <p><%= post.body %></p>
+  </li>
+  <% }); %>
+</ul>
+<%- include('layouts/footer.ejs') %>

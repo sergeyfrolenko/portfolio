@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create</title>
-</head>
-<body>
-    <form action="/create" method="POST">
-        <label for='title'>title:</label>
-        <input id='title' type="text" name="title">
-        <br>
-        <label for='body'>body:</label>
-        <textarea id='body' type="textarea" name="body" col='10' row='5'></textarea>
-        <button type="submit">Submit</button>
-    </form>
-</body>
-</html>
+<%- include('layouts/head.ejs') %>
+<form action="/create" method="POST">
+  <label for="title">title:</label>
+  <input id="title" type="text" name="title" />
+  <br />
+  <label for="body">body:</label>
+  <textarea id="body" type="textarea" name="body" col="10" row="5"></textarea>
+  <button type="submit">Submit</button>
+</form>
+<%- include('layouts/footer.ejs') %>
