@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main page</title>
-</head>
-<body>
+<%- include('layouts/head.ejs') %>
     <h1> <%- text %></h1>
     <nav>
         <ul>
@@ -13,8 +6,11 @@
         </ul>
     </nav>
     <ul>
-        <% arr.forEach(function(el){ %>
-            <li> <%= el %> </li>
+      <% posts.forEach(function(post) { %>
+            <li>
+              <h3> <%= post.title %> </h3>
+              <p> <%= post.body %> </p>
+            </li>
         <% }); %>
       </ul>
 </body>

@@ -1,25 +1,37 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser"); // for decode post data
-const Post = require('./model/post')
+const Post = require('./models/post')
+const path = require('path')
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join('__dirname','public')))
 
-const arr = [1, 2, 3];
+// const arr = [1, 2, 3];
 
 app.get("/", function (req, res) {
-  res.render("index", {
-    text: "Hello from index.js",
-    arr: arr,
-  });
+  Post.find()
+    .then(posts=>{
+      res.render("index", {
+        text: "Hello from index.js",
+        posts: posts
+      })
+    .catch(e=>{
+      console.log(e);
+    })
+    })
 });
 app.get("/create", function (req, res) {
   res.render("create");
 });
 app.post("/create", function (req, res) {
   // arr.push(req.body.text);
-    
+  const { title, body } = req.body;
+  Post.create({
+    title: title,
+    body: body
+  });  
   res.redirect("/");
 });
 

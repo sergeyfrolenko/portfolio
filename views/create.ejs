@@ -7,7 +7,11 @@
 </head>
 <body>
     <form action="/create" method="POST">
-        <input type="text" name="text">
+        <label for='title'>title:</label>
+        <input id='title' type="text" name="title">
+        <br>
+        <label for='body'>body:</label>
+        <textarea id='body' type="textarea" name="body" col='10' row='5'></textarea>
         <button type="submit">Submit</button>
     </form>
 </body>
