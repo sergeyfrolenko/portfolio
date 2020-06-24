@@ -9,4 +9,4 @@ Project about my work and my skills
 - what work?
   layout works
 - trouble with include jquery in project - refresh was enough
-- can't include css
+- can't include css - in fact, I just having incorrect paths
