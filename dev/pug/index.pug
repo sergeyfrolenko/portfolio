@@ -1,6 +1,6 @@
 html
   head
-    link(rel = 'javascript' href = '../css/style.css')
+    link(rel = 'stylesheet' href = 'css/style.css')
     title Main page
   body
     header
@@ -8,9 +8,18 @@ html
         div.Logo_h1 Sergey Frolenko portfolio
     content 
       div.Figure
-        div.Figure_caption
+        div.Figure-caption
           h3 title
     sidebar
       div.Auth
+        form(action = '#' method = 'POST')
+          div.Auth-login
+            label(for = 'login') login
+            input(type = 'text' id = 'login' name = 'login')
+          div.Auth-pass
+            label(for = 'pass') password
+            input(type = 'text' id = 'pass' name = 'pass')
+          div.Auth-btn
+            button(type = 'submit') Log in
       nav
     footer
