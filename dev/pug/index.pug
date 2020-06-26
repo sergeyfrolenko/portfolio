@@ -14,8 +14,10 @@ html
       div.Auth
         form(action = '#' method = 'POST')
           div.Auth-login
-            label(for = 'login') login
-            input(type = 'text' id = 'login' name = 'login')
+            div.col-6
+              label(for = 'login') login
+            div.col-6
+              input(type = 'text' id = 'login' name = 'login')
           div.Auth-pass
             label(for = 'pass') password
             input(type = 'text' id = 'pass' name = 'pass')

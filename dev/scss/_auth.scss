@@ -1,14 +1,22 @@
 .Auth {
-  // display: flex;
-  width: 100%;
+  display: flex;
+  width: 200px;
   padding: 10px;
-  background-color: #11ff11;
   justify-content: center;
-}
+  background-color: #1ff;
 
-.Auth-login {
-  margin-bottom: 10px;
-}
-.Auth-pass {
-  margin-bottom: 10px;
+  .Auth-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .Auth-field {
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
+  .Auth-signin {
+    display: none;
+  }
 }

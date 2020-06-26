@@ -13,5 +13,9 @@ Project about my work and my skills
 
 @25.06.20
 
-- WORK server, add to db and read db  function, gulp file.
+- WORK server, add to db and read db function, gulp file.
 - MAKE easy markup with sass, pug and gulp
+
+@26.06.20
+
+- BUILD current markup to views fit

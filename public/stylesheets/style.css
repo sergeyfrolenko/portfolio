@@ -1,6 +1,1 @@
-h1 {
-  color: coral;
-}
-body {
-  background-color: #eee;
-}
+*{margin:0;padding:0}body{color:red;background-color:#eee}h1{text-decoration:underline}.Auth{display:flex;width:200px;padding:10px;justify-content:center;background-color:#1ff}.Auth .Auth-buttons{display:flex;justify-content:space-between;margin-top:10px}.Auth .Auth-field{margin-bottom:5px;margin-top:5px}.Auth .Auth-signin{display:none}

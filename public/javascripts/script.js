@@ -1,4 +1,1 @@
-// comment
-$("h1").click(()=>{
-  $('nav').toggle('slow');
-})
+$(function(){var i=!0;$(".switch-button").on("click",function(n){n.preventDefault(),$("h1").hide(),i?(i=!1,$(".Auth-signin").show("slow"),$(".Auth-login").hide()):(i=!0,$(".Auth-login").show("slow"),$(".Auth-signin").hide())})});

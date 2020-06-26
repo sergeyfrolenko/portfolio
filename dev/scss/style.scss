@@ -1,10 +1,13 @@
+@import "reset";
+
 $color: red;
 
 body {
   color: $color;
+  background-color: #eee;
 }
 h1 {
   text-decoration: underline;
 }
 
-@import 'auth';
+@import "auth";
